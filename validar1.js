@@ -6,7 +6,7 @@ var iniciarsesion = document.getElementById("formulario-login").addEventListener
 // REDIRIGIRA A UNA NUEVA PESTAÑA DE BIENVENIDA
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        location.replace("Paginaprincipal.html");
+        location.replace("principal.html");
     }
 });
 // FUNCION PARA VERIFICAR Y HACER EL LLAMADO DEL EMAIL Y EL PASSWORD DEL USUARIO
