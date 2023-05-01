@@ -5,7 +5,7 @@ const expresiones_contraseña = /^.{4,12}$/;
 const expresiones_contraseña2 = /^.{4,12}$/;
 const expresiones_nombre = /^[a-zA-Z]{4,20}$/;
 const expresiones_telefono = /^[0-9]{10,10}$/;
-const expresiones_area = /^[a-zA-Z ]{5,30}$/;
+const expresiones_Área = /^[a-zA-Z ]{5,30}$/;
 const expresiones_sexo = /^[MF]$/;
 
 const validarRegistro = document.getElementById("formulario-registro");
@@ -17,10 +17,10 @@ validarRegistro.addEventListener("submit", async (e) => {
     var password = document.getElementById("password").value;
     var confirm_password = document.getElementById("confirm_password").value;
     var telefono = document.getElementById("telefono").value;
-    var area = document.getElementById("area").value;
+    var Área = document.getElementById("Área").value;
     var sexo = document.getElementById("sexo").value;
 
-    if (cedula == "" || telefono == "" || nombres == "" || apellidos == "" || correo == "" || password == "" || confirm_password == "" || area == "" || sexo == "") {
+    if (cedula == "" || telefono == "" || nombres == "" || apellidos == "" || correo == "" || password == "" || confirm_password == "" || Área == "" || sexo == "") {
         e.preventDefault();
         alert("Todos los campos son obligatorios");
         return false;
@@ -52,7 +52,7 @@ validarRegistro.addEventListener("submit", async (e) => {
         e.preventDefault();
         alert("Las contraseñas no coinciden");
         return false;
-    } else if (!expresiones_area.test(area)) {
+    } else if (!expresiones_Área.test(Área)) {
         e.preventDefault();
         alert("El área debe contener entre 5 y 30 caracteres");
         return false;
@@ -61,7 +61,7 @@ validarRegistro.addEventListener("submit", async (e) => {
         alert("El sexo debe ser 'M' o 'F'");
         return false;
     } else {
-        const enviar = (cedula, telefono, nombres, apellidos, correo, password, confirm_password, sexo, area) => {
+        const enviar = (cedula, telefono, nombres, apellidos, correo, password, confirm_password, sexo, Área) => {
             db.collection('UsuariosRegistrados').doc().set({
                 cedula,
                 telefono,
@@ -71,7 +71,7 @@ validarRegistro.addEventListener("submit", async (e) => {
                 password,
                 confirm_password,
                 sexo,
-                area
+                Área
             });
         };
         e.preventDefault();
@@ -83,11 +83,11 @@ validarRegistro.addEventListener("submit", async (e) => {
         const password = validarRegistro["password"].value;
         const confirm_password = validarRegistro["confirm_password"].value;
         const sexo = validarRegistro["sexo"].value;
-        const area = validarRegistro["area"].value;
+        const Área = validarRegistro["Área"].value;
 
         alert("Te has registrado exitosamente");
 
-        await enviar(cedula, telefono, nombres, apellidos, correo, password, confirm_password, sexo, area);
+        await enviar(cedula, telefono, nombres, apellidos, correo, password, confirm_password, sexo, Área);
 
         // AUTENTICACION DE USUARIOS
         auth.createUserWithEmailAndPassword(correo, password)
