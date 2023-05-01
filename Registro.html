@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+
+<body>
+    <h1>Formulario Registro</h1>
+    <form action="" class="form-register" id="formulario-registro">
+        <h2 class="form__titulo">
+            <center>Crea tu Cuenta</center>
+        </h2>
+        <div class="contenedor-input">
+            <label><b>Nombres:</b></label><br>
+            <input type="text" id="nombres" name="nombres" placeholder="Ingrese sus nombres" class="input-48"
+                required><br>
+            <label><b>Apellidos:</b></label><br>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos" class="input-48"
+                required><br>
+            <label><b>Cédula I.:</b></label><br>
+            <input type="text" id="cedula" name="cedula" placeholder="Ingrese su número de cédula" class="input-100"
+                required><br>
+            <label><b>Teléfono :</b></label><br>
+            <input type="text" id="telefono" name="teléfono" placeholder="Teléfono" class="input-100" required><br>
+            <label for="correo"><b>Correo electrónico:</b></label>
+            <input type="email" id="correo" name="correo" placeholder="Correo Electrónico" class="input-110" required
+                onfocusout="validarCorreo()">
+            <label><b> Contraseña: </b></label>
+            <input type="password" id="password" name="contraseña" tipo="contraseña" placeholder="Contraseña"
+                class="input-50" required>
+            <label><b> Repetir contraseña:</b></label>
+            <input type="password" id="confirm_password" name="repetircontraseña" placeholder="Repetir Contraseña"
+                class="input-50" required><span id='message'></span>
+            <label><b>Área:</b></label>
+            <select id="area" name="area" class="input-100" required>
+                <option value="">Seleccione un área</option>
+                <option value="bioquimica">Bioquímica</option>
+                <option value="biologia-molecular">Biología Molecular</option>
+                <option value="citogenetica">Citogenética</option>
+                <option value="microbiologia">Microbiología</option>
+                <option value="inmunologia">Inmunología</option>
+                <option value="otros">Otros</option>
+            </select>
+
+            <label class="radio">Sexo:
+                <center><input type="radio" name="sexo" value="hombre" required /> Masculino </center>
+            </label>
+            <center>
+                <br> <input type="radio" name="sexo" value="mujer" required /> Femenino
+            </center>
+            <br>
+            <input type="submit" value="Registrarse" class="btn-enviar" id="boton">
+        </div>
+        <center>
+            <p class="form__link">¿Ya tienes cuenta? <a class="link" href="Inicio.html">Inicia Sesión</a></p>
+        </center>
+        <center><a href="principal.html" class="button1"><b>VOLVER A PÁGINA PRINCIPAL</a></b></center>
+        </div>
+    </form>
+    <script src="validar2.js"></script>
+
+    <img src="registro.jpg" alt="">
+
+</body>
+
+</html>
